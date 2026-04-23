@@ -1,5 +1,10 @@
 {
+  "functions": {
+    "api/meta.js": {
+      "runtime": "edge"
+    }
+  },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" }
+    { "source": "/api/meta", "destination": "/api/meta.js" }
   ]
 }
