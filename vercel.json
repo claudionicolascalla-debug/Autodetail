@@ -1,10 +1,11 @@
 {
-  "functions": {
-    "api/meta.js": {
-      "runtime": "edge"
-    }
-  },
-  "rewrites": [
-    { "source": "/api/meta", "destination": "/api/meta.js" }
+  "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "api/meta.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/meta", "dest": "/api/meta.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
